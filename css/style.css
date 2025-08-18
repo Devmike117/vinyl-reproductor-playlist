@@ -1,0 +1,332 @@
+:root{
+  --bg:#8b9de6;
+  --panel:#bdbdbd;
+  --accent:#ff6f61;
+  --vinyl-dark:#0d0d0d;
+  --text:#333;
+  --text-muted:#777;
+  --highlight:#ef476f;
+}
+
+*{box-sizing:border-box}
+body, html{
+  margin:0;
+  padding:0;
+  font-family:Inter, sans-serif;
+  background: linear-gradient(180deg,#295998,var(--bg));
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  min-height:100vh;
+  padding:20px;
+}
+
+/* Frame */
+.frame{
+  width:100%;
+  max-width:960px;
+  background:var(--panel);
+  border-radius:18px;
+  padding:20px;
+  box-shadow:0 20px 50px rgba(6,10,20,0.15);
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+  align-items:center;
+}
+
+/* Canvas */
+.canvas{
+  width:100%;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:20px;
+}
+
+/* Album cover */
+.cover{
+  flex:1 1 300px;
+  max-width:100%;
+  aspect-ratio:1/1;
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 12px 30px rgba(0,0,0,0.12);
+  display:grid;
+  place-items:center;
+  background:linear-gradient(180deg,#fff,#f0f0f5);
+  transform:rotate(-6deg);
+}
+.cover img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+/* inclinación de cover en versión móvil */
+@media(max-width:600px){
+  .cover{
+    transform:rotate(-6deg); /* mantiene ligera inclinación */
+  }
+}
+
+
+/* Turntable */
+.turntable{
+  flex:1 1 300px;
+  max-width:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  position:relative;
+}
+
+/* Vinyl */
+.vinyl-wrap{
+  width:100%;
+  max-width:300px;
+  aspect-ratio:1/1;
+  display:grid;
+  place-items:center;
+  border-radius:16px;
+  padding:18px;
+  background: radial-gradient(circle at top left,#5a5353 0%,#2c2a2a 70%,#1a1919 100%);
+  box-shadow: inset 0 6px 20px rgba(255,255,255,0.05),0 14px 40px rgba(0,0,0,0.25);
+  position:relative;
+}
+.vinyl-wrap::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:16px;
+  background: linear-gradient(145deg, rgba(255,255,255,0.05), transparent);
+}
+.vinyl{
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  background:
+    radial-gradient(circle at center, var(--vinyl-dark) 0 15%, #111 15% 25%, #0b0b0b 25% 60%, #111 60% 100%),
+    radial-gradient(circle at center, rgba(255,255,255,0.02) 0 2%, transparent 2% 100%);
+  display:grid;
+  place-items:center;
+  transition:transform 0.2s linear;
+}
+.label{
+  width:80px;
+  height:80px;
+  border-radius:50%;
+  background: linear-gradient(180deg,#ffd166,#ef476f);
+  display:grid;
+  place-items:center;
+  font-weight:700;
+  font-size:12px;
+  text-align:center;
+  box-shadow:inset 0 6px 18px rgba(255,255,255,0.2);
+}
+
+/* Spin animation */
+.vinyl.playing{
+  animation:spin 4.5s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg);}}
+
+/* Tonearm SVG */
+.arm-wrap{
+  position:absolute;
+  right:10px;
+  top:10px;
+  width:30px;
+  height:160px;
+  transform-origin:top center;
+  transition: transform .3s ease;
+}
+.arm-wrap svg{
+  width:100%;
+  height:100%;
+}
+.turntable.playing .arm-wrap{
+  transform: rotate(45deg);
+}
+
+/* Controls */
+.controls{
+  margin-top:16px;
+  display:flex;
+  gap:10px;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.controls button{
+  padding:8px 12px;
+  border-radius:8px;
+  border:1px solid rgba(0,0,0,0.06);
+  background:#fff;
+  cursor:pointer;
+  transition: all 0.2s ease; /* animación suave */
+}
+
+/* Cambio de color y sombra al presionar */
+.controls button:active{
+  background: var(--accent); /* color activo */
+  color: #fff;
+  transform: scale(0.95); /* efecto de pulsación */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Hover para efecto visual */
+.controls button:hover{
+  background: rgba(255,111,97,0.1);
+}
+
+/* Estado activo: mantiene color y efecto */
+.controls button.active{
+  background: var(--accent);
+  color: #fff;
+  transform: scale(0.95);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+
+/* Playlist */
+.playlist-container{
+  width:100%;
+  background:var(--panel);
+  border-radius:14px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  overflow-x:auto;
+  padding:10px;
+}
+.playlist-table{
+  width:100%;
+  border-collapse: collapse;
+}
+.playlist-table th, .playlist-table td{
+  padding:10px;
+  text-align:left;
+  font-size:14px;
+  color:var(--text);
+  white-space:nowrap;
+}
+.playlist-table th{
+  font-weight:600;
+  color:var(--text-muted);
+  border-bottom:2px solid rgba(0,0,0,0.1);
+}
+.playlist-table tbody tr{
+  cursor:pointer;
+  transition:background 0.2s;
+}
+.playlist-table tbody tr:hover{
+  background:rgba(255,111,97,0.1);
+}
+.playlist-table tbody tr.active{
+  background:rgba(255,111,97,0.2);
+}
+.playlist-table img{
+  width:40px;
+  height:40px;
+  object-fit:cover;
+  border-radius:6px;
+}
+
+/* Scrollbar */
+.playlist-container::-webkit-scrollbar{
+  height:6px;
+}
+.playlist-container::-webkit-scrollbar-thumb{
+  background:rgba(0,0,0,0.2);
+  border-radius:3px;
+}
+.playlist-container::-webkit-scrollbar-track{
+  background:transparent;
+}
+
+/* Mobile */
+@media(max-width:600px){
+  .canvas{
+    flex-direction:column;
+    align-items:center;
+  }
+  .cover{
+    transform:rotate(0);
+  }
+  .turntable{
+    width:90%;
+  }
+  .vinyl-wrap{
+    max-width:220px;
+    padding:12px;
+  }
+  .label{
+    width:70px;
+    height:70px;
+    font-size:10px;
+  }
+  .arm-wrap{
+    width:20px;
+    height:120px;
+    top:5px;
+    right:5px;
+  }
+  .playlist-table th, .playlist-table td{
+    font-size:12px;
+    padding:6px 8px;
+  }
+  .playlist-table img{
+    width:30px;
+    height:30px;
+  }
+}
+
+
+.vinyl-label {
+  width:100px;
+  height:100px;
+  border-radius:50%;
+  object-fit:cover;
+  box-shadow: inset 0 6px 18px rgba(255,255,255,0.2);
+  transition: all 0.3s ease;
+}
+
+
+/* Mensaje solo para móviles */
+.mobile-warning {
+  display: none; /* inicialmente oculto */
+  position: fixed;
+  top: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #010101;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-weight: 600;
+  z-index: 9999;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+
+/* Oculto por defecto en escritorio */
+@media(min-width: 880px) {
+  .mobile-warning {
+    display: none;
+  }
+}
+
+
+/* Footer */
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-top: 20px;
+}
+
+footer a {
+  color: #ff4081; /* rosa vibrante */
+  text-decoration: none;
+}

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="icon" type="image/x-icon" href="img/vinilo.png" />
+  <title>Playlist vinyl</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="frame">
+    <div id="mobile-warning" class="mobile-warning">
+  <p>Para mejor experiencia, gira tu teléfono y usa el modo escritorio u ábrelo en una computadora o tablet.</p>
+</div>
+
+    <div class="canvas">
+
+      <!-- Album cover -->
+      <div class="cover">
+        <img id="cover-img" src="img/never.png" alt="Album cover">
+      </div>
+
+      <!-- vinyl -->
+      <div class="turntable">
+
+        <div class="vinyl-wrap">
+          <div id="vinyl" class="vinyl">
+            <img id="vinyl-cover" src="img/never.png" alt="Mini cover" class="vinyl-label">
+          </div>
+
+  <!-- Tornamesa -->
+  <div class="arm-wrap">
+    <svg id="arm" viewBox="0 0 40 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g>
+        <rect x="16" y="0" width="8" height="130" rx="4" fill="#dfe6ee" opacity="0.95"/>
+        <circle cx="20" cy="142" r="10" fill="#f5f7fa" stroke="#c3cbd6" stroke-width="1"/>
+        <rect x="16" y="148" width="8" height="40" rx="3" fill="#fff"/>
+      </g>
+    </svg>
+  </div>
+</div>
+
+
+        <!-- Controles -->
+        <div class="controls">
+          <button id="play" aria-pressed="false">▶ Play</button>
+          <button id="pause">⏸ Pause</button>
+          <button id="stop">⏹ Stop</button>
+          <input id="volume" type="range" min="0" max="100" value="80" />
+          <span id="vol-label">80%</span>
+        </div>
+
+      </div>
+
+<!-- Playlist -->
+<div class="playlist-container">
+  <table class="playlist-table" id="playlist-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Portada</th>
+        <th>Artista - Canción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr data-src="https://raw.githubusercontent.com/Devmike117/music1/main/Never%20Let%20Me%20Go-Lana%20Del%20Rey.mp3" type="audio/mpeg" data-cover="img/never.png">
+        <td>1</td>
+        <td><img src="img/never.png" alt="Portada 1"></td>
+        <td>Lana Del Rey - Never let me go</td>
+      </tr>
+
+      <tr data-src="https://raw.githubusercontent.com/Devmike117/music1/main/Queen%20of%20Disaster.mp3" type="audio/mpeg" data-cover="img/queen.png">
+        <td>2</td>
+        <td><img src="img/queen.png" alt="Portada 2"></td>
+        <td>Lana Del Rey - Queen of disaster</td>
+      </tr>
+
+      <tr data-src="https://raw.githubusercontent.com/Devmike117/music1/main/MEET%20ME%20IN%20THE%20PALE%20MOONLIGHT.mp3" type="audio/mpeg" data-cover="img/meet.png">
+        <td>3</td>
+        <td><img src="img/meet.png" alt="Portada 3"></td>
+        <td>Lana Del Rey - Meet me in the pale moonlight</td>
+      </tr>
+
+      <tr data-src="https://raw.githubusercontent.com/Devmike117/music1/main/BIRDS%20OF%20A%20FEATHER%20-%20Billie%20Eilish.mp3" type="audio/mpeg" data-cover="img/billie.png">
+        <td>4</td>
+        <td><img src="img/billie.png" alt="Portada 4"></td>
+        <td>Billie Eilish - Birds of a feather</td>
+      </tr>
+
+      <tr data-src="https://raw.githubusercontent.com/Devmike117/music1/main/CHIHIRO%20-%20Billie%20Eilish.mp3" type="audio/mpeg" data-cover="img/billie.png">
+        <td>5</td>
+        <td><img src="img/billie.png" alt="Portada 5"></td>
+        <td>Billie Eilish - Chihiro</td>
+      </tr>
+
+      <tr data-src="https://raw.githubusercontent.com/Devmike117/music1/main/Tejano%20Blue%20-%20Cigarettes%20After%20Sex.mp3" type="audio/mpeg" data-cover="img/cigarretes.png">
+        <td>6</td>
+        <td><img src="img/cigarretes.png" alt="Portada 6"></td>
+        <td>Cigarretes After Sex - Tejano Blue</td>
+      </tr>
+
+      <tr data-src="https://raw.githubusercontent.com/Devmike117/music1/main/Dreams%20From%20Bunker%20Hill%20-%20Cigarettes%20After%20Sex.mp3" type="audio/mpeg" data-cover="img/cigarretes.png">
+        <td>7</td>
+        <td><img src="img/cigarretes.png" alt="Portada 7"></td>
+        <td>Cigarretes After Sex - Dreams From Bunker Hill</td>
+      </tr>
+
+      <tr data-src="https://raw.githubusercontent.com/Devmike117/music/main/Add%20Up%20My%20Love%20-%20Clairo.mp3" type="audio/mpeg" data-cover="img/clairo.png">
+        <td>8</td>
+        <td><img src="img/clairo.png" alt="Portada 8"></td>
+        <td>Clairo - Add Up My Love</td>
+      </tr>
+
+      <tr data-src="https://raw.githubusercontent.com/Devmike117/music/main/Quiero%20Estar%20-%20Bratty.mp3" type="audio/mpeg" data-cover="img/brattyrojo.png">
+        <td>9</td>
+        <td><img src="img/brattyrojo.png" alt="Portada 9"></td>
+        <td>Bratty - Quiero Estar</td>
+      </tr>
+
+      <tr data-src="https://raw.githubusercontent.com/Devmike117/music/main/Agosto%20-%20Bratty.mp3" type="audio/mpeg" data-cover="img/bratty.png">
+        <td>10</td>
+        <td><img src="img/bratty.png" alt="Portada 10"></td>
+        <td>Bratty - Agosto</td>
+      </tr>
+
+      <tr data-src="https://raw.githubusercontent.com/Devmike117/music/main/Que%20Yo%20A%20T%C3%AD%20-%20BRATTY.mp3" type="audio/mpeg" data-cover="img/bratty.png">
+        <td>11</td>
+        <td><img src="img/bratty.png" alt="Portada 11"></td>
+        <td>Bratty - Que Yo A Tí</td>
+      </tr>
+
+      <tr data-src="https://raw.githubusercontent.com/Devmike117/music/main/AMOUR%20-%20The%20Warning.mp3" type="audio/mpeg" data-cover="img/thewarning.png">
+        <td>12</td>
+        <td><img src="img/thewarning.png" alt="Portada 12"></td>
+        <td>The Warning - AMOUR</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+    <!--footer-->
+    <footer>
+      <p>Desarrollado por <a href="https://instagram.com/Devmike117" target="_blank">Devmike117</a></p>
+    </footer>
+
+  <!-- audio principal -->
+  <audio id="audio" preload="metadata" src="https://raw.githubusercontent.com/Devmike117/music1/main/Never%20Let%20Me%20Go-Lana%20Del%20Rey.mp3"></audio>
+
+ <script>
+  const playBtn = document.getElementById('play');
+  const pauseBtn = document.getElementById('pause');
+  const stopBtn = document.getElementById('stop');
+  const vinyl = document.getElementById('vinyl');
+  const turntable = document.querySelector('.turntable');
+  const audio = document.getElementById('audio');
+  const volumeSlider = document.getElementById('volume');
+  const volLabel = document.getElementById('vol-label');
+  const coverImg = document.getElementById('cover-img');
+  
+  const controlButtons = [playBtn, pauseBtn, stopBtn];
+  
+  const playlistTable = document.getElementById('playlist-table');
+  const playlistRows = Array.from(playlistTable.querySelectorAll('tbody tr'));
+  let currentTrackIndex = 0; 
+  
+  // activar un botón y desactivar los demás
+  function setActiveButton(activeBtn) {
+    controlButtons.forEach(btn => {
+      if (btn === activeBtn) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+  }
+  
+  // reproducir una canción por índice
+  function playTrack(index) {
+    if (index < 0 || index >= playlistRows.length) return;
+    currentTrackIndex = index;
+    
+    const row = playlistRows[index];
+    const src = row.getAttribute('data-src');
+    const cover = row.getAttribute('data-cover');
+    
+    audio.src = src;
+    coverImg.src = cover; 
+    document.getElementById('vinyl-cover').src = cover; 
+    
+    vinyl.classList.add('playing');
+    turntable.classList.add('playing');
+    audio.play();
+    setActiveButton(playBtn);
+  }
+  
+  
+  playlistRows.forEach((row, index) => {
+    row.addEventListener('click', () => {
+      playTrack(index);
+    });
+  });
+  
+  // Play
+  playBtn.addEventListener('click', () => {
+    vinyl.classList.add('playing');
+    turntable.classList.add('playing');
+    audio.play();
+    setActiveButton(playBtn);
+  });
+  
+  // Pause
+  pauseBtn.addEventListener('click', () => {
+    vinyl.classList.remove('playing');
+    turntable.classList.remove('playing');
+    audio.pause();
+    setActiveButton(pauseBtn);
+  });
+  
+  // Stop
+  stopBtn.addEventListener('click', () => {
+    vinyl.classList.remove('playing');
+    turntable.classList.remove('playing');
+    audio.pause();
+    audio.currentTime = 0;
+    setActiveButton(stopBtn);
+  });
+  
+  // Control de volumen
+  volumeSlider.addEventListener('input', () => {
+    audio.volume = volumeSlider.value / 100;
+    volLabel.textContent = `${volumeSlider.value}%`;
+  });
+  
+  // Reproducir siguiente canción al terminar
+  audio.addEventListener('ended', () => {
+    if (currentTrackIndex < playlistRows.length - 1) {
+      playTrack(currentTrackIndex + 1);
+    } else {
+      vinyl.classList.remove('playing');
+      turntable.classList.remove('playing');
+      setActiveButton(stopBtn);
+    }
+  });
+
+   // Detectar si la pantalla es pequeña
+  function showMobileWarning() {
+    const warning = document.getElementById('mobile-warning');
+    if (window.innerWidth <= 600) {
+      warning.style.display = 'block';
+      
+      setTimeout(() => {
+        warning.style.display = 'none';
+      }, 5000);
+    } else {
+      warning.style.display = 'none';
+    }
+  }
+
+  // Ejecuta al cargar la página
+  window.addEventListener('load', showMobileWarning);
+  // ejecutar al cambiar tamaño de ventana
+  window.addEventListener('resize', showMobileWarning);
+</script>
+
+</body>
+</html>
+

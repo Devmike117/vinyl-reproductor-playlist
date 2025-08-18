@@ -89,8 +89,8 @@ body, html{
   place-items:center;
   border-radius:16px;
   padding:18px;
-  background: radial-gradient(circle at top left,#5a5353 0%,#2c2a2a 70%,#1a1919 100%);
-  box-shadow: inset 0 6px 20px rgba(255,255,255,0.05),0 14px 40px rgba(0,0,0,0.25);
+  background: radial-gradient(circle at top left, #4f8cc9 0%, #2d4e72 70%, #111a25 100%);
+  box-shadow: inset 0 6px 20px rgba(255,255,255,0.05), 0 14px 40px rgba(0,0,0,0.3);
   position:relative;
 }
 .vinyl-wrap::before{
@@ -182,6 +182,46 @@ body, html{
 
 /* Estado activo: mantiene color y efecto */
 .controls button.active{
+  background: var(--accent);
+  color: #fff;
+  transform: scale(0.95);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Navegación */
+.navigation {
+  margin-top: 20px; /* asegura separación */
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.navigation button {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.06);
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Cambio de color y sombra al presionar */
+.navigation button:active{
+  background: var(--accent); /* color activo */
+  color: #fff;
+  transform: scale(0.95); /* efecto de pulsación */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Hover para efecto visual */
+.navigation button:hover{
+  background: rgba(255,111,97,0.1);
+}
+
+/* Estado activo: mantiene color y efecto */
+.navigation button.active{
   background: var(--accent);
   color: #fff;
   transform: scale(0.95);
@@ -330,3 +370,4 @@ footer a {
   color: #ff4081; /* rosa vibrante */
   text-decoration: none;
 }
+

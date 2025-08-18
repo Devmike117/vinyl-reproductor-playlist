@@ -40,17 +40,22 @@
   </div>
 </div>
 
+<!-- Controles -->
+<div class="controls">
+  <button id="play" aria-pressed="false">▶ Play</button>
+  <button id="pause">⏸ Pause</button>
+  <button id="stop">⏹ Stop</button>
+  <input id="volume" type="range" min="0" max="100" value="80" />
+  <span id="vol-label">80%</span>
+</div>
 
-        <!-- Controles -->
-        <div class="controls">
-          <button id="play" aria-pressed="false">▶ Play</button>
-          <button id="pause">⏸ Pause</button>
-          <button id="stop">⏹ Stop</button>
-          <input id="volume" type="range" min="0" max="100" value="80" />
-          <span id="vol-label">80%</span>
-        </div>
+<!-- Navegación -->
+<div class="navigation">
+  <button id="prev" aria-label="Previous">◀ Previous</button>
+  <button id="next" aria-label="Next">Next ▶</button>
+</div>
+</div>
 
-      </div>
 
 <!-- Playlist -->
 <div class="playlist-container">
@@ -151,6 +156,8 @@
   const playBtn = document.getElementById('play');
   const pauseBtn = document.getElementById('pause');
   const stopBtn = document.getElementById('stop');
+  const nextBtn = document.getElementById('next');
+  const prevBtn = document.getElementById('prev');
   const vinyl = document.getElementById('vinyl');
   const turntable = document.querySelector('.turntable');
   const audio = document.getElementById('audio');
@@ -231,7 +238,21 @@
     audio.volume = volumeSlider.value / 100;
     volLabel.textContent = `${volumeSlider.value}%`;
   });
-  
+
+  // Next
+  nextBtn.addEventListener('click', () => {
+    if (currentTrackIndex < playlistRows.length - 1) {
+      playTrack(currentTrackIndex + 1);
+    }
+  });
+
+  // Previous
+  prevBtn.addEventListener('click', () => {
+    if (currentTrackIndex > 0) {
+      playTrack(currentTrackIndex - 1);
+    }
+  });
+
   // Reproducir siguiente canción al terminar
   audio.addEventListener('ended', () => {
     if (currentTrackIndex < playlistRows.length - 1) {
@@ -265,4 +286,7 @@
 
 </body>
 </html>
+
+
+
 

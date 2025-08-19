@@ -42,32 +42,55 @@
 
 <!-- Controles -->
 <div class="controls">
-  <button id="play" aria-pressed="false">▶ Play</button>
-  <button id="pause">⏸ Pause</button>
-  <button id="stop">⏹ Stop</button>
+    <button id="play" aria-pressed="false">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z"/>
+    </svg>
+    Play
+  </button>
+  <button id="pause">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pause-circle-fill" viewBox="0 0 16 16">
+      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.25 5C5.56 5 5 5.56 5 6.25v3.5a1.25 1.25 0 1 0 2.5 0v-3.5C7.5 5.56 6.94 5 6.25 5m3.5 0c-.69 0-1.25.56-1.25 1.25v3.5a1.25 1.25 0 1 0 2.5 0v-3.5C11 5.56 10.44 5 9.75 5"/>
+    </svg>
+    Pause
+  </button>
+  <button id="stop">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-stop-circle-fill" viewBox="0 0 16 16">
+      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.5 5A1.5 1.5 0 0 0 5 6.5v3A1.5 1.5 0 0 0 6.5 11h3A1.5 1.5 0 0 0 11 9.5v-3A1.5 1.5 0 0 0 9.5 5z"/>
+    </svg>
+    Stop
+  </button>
   <input id="volume" type="range" min="0" max="100" value="80" />
   <span id="vol-label">80%</span>
 </div>
 
 <!-- Navegación -->
 <div class="navigation">
-  <button id="prev" aria-label="Previous">◀ Previous</button>
-  <button id="next" aria-label="Next">Next ▶</button>
+  <button id="prev" aria-label="Previous">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-rewind-circle-fill" viewBox="0 0 16 16">
+  <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16M7.729 5.055A.5.5 0 0 1 8 5.5v1.886l3.21-2.293A.5.5 0 0 1 12 5.5v5a.5.5 0 0 1-.79.407L8 8.614V10.5a.5.5 0 0 1-.79.407l-3.5-2.5a.5.5 0 0 1 0-.814l3.5-2.5a.5.5 0 0 1 .519-.038"/>
+</svg>Previous</button>
+  <button id="next" aria-label="Next">Next 
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-fast-forward-circle-fill" viewBox="0 0 16 16">
+  <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16M4.79 5.093 8 7.386V5.5a.5.5 0 0 1 .79-.407l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 8 10.5V8.614l-3.21 2.293A.5.5 0 0 1 4 10.5v-5a.5.5 0 0 1 .79-.407"/>
+</svg>
+  </button>
 </div>
 </div>
 
 
 <!-- Playlist -->
 <div class="playlist-container">
-  <table class="playlist-table" id="playlist-table">
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Portada</th>
-        <th>Artista - Canción</th>
-      </tr>
-    </thead>
-    <tbody>
+  <div class="playlist-scroll">
+    <table class="playlist-table" id="playlist-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Portada</th>
+          <th>Artista - Canción</th>
+        </tr>
+      </thead>
+      <tbody>
       <tr data-src="https://raw.githubusercontent.com/Devmike117/music1/main/Never%20Let%20Me%20Go-Lana%20Del%20Rey.mp3" type="audio/mpeg" data-cover="img/never.png">
         <td>1</td>
         <td><img src="img/never.png" alt="Portada 1"></td>
@@ -166,7 +189,7 @@
     </tbody>
   </table>
 </div>
-
+    </div>
 
     <!--footer-->
     <footer>
@@ -454,6 +477,7 @@ document.addEventListener("keydown", function (e) {
 
 </body>
 </html>
+
 
 
 

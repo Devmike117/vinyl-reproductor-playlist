@@ -228,42 +228,62 @@ body, html{
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-
 /* Playlist */
 .playlist-container{
   width:100%;
   background:var(--panel);
   border-radius:14px;
   box-shadow:0 10px 30px rgba(0,0,0,0.08);
-  overflow-x:auto;
-  padding:10px;
+  max-height: 360px; 
+  overflow-y: hidden; 
+  position: relative;
+  padding:0;
 }
+
+.playlist-scroll{
+  max-height:360px; /* contenedor */
+  overflow-y:auto; /* scroll*/
+  border-radius:14px;
+}
+
 .playlist-table{
   width:100%;
   border-collapse: collapse;
 }
+
 .playlist-table th, .playlist-table td{
   padding:10px;
   text-align:left;
   font-size:14px;
   color:var(--text);
   white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
 }
+
 .playlist-table th{
   font-weight:600;
   color:var(--text-muted);
   border-bottom:2px solid rgba(0,0,0,0.1);
+  background:var(--panel);
+  position: sticky;
+  top:0;
+  z-index: 2;
 }
+
 .playlist-table tbody tr{
   cursor:pointer;
   transition:background 0.2s;
 }
+
 .playlist-table tbody tr:hover{
   background:rgba(255,111,97,0.1);
 }
+
 .playlist-table tbody tr.active{
   background:rgba(255,111,97,0.2);
 }
+
 .playlist-table img{
   width:40px;
   height:40px;
@@ -271,17 +291,8 @@ body, html{
   border-radius:6px;
 }
 
-/* Scrollbar */
-.playlist-container::-webkit-scrollbar{
-  height:6px;
-}
-.playlist-container::-webkit-scrollbar-thumb{
-  background:rgba(0,0,0,0.2);
-  border-radius:3px;
-}
-.playlist-container::-webkit-scrollbar-track{
-  background:transparent;
-}
+
+
 
 /* Mobile */
 @media(max-width:600px){
@@ -371,3 +382,69 @@ footer a {
   text-decoration: none;
 }
 
+
+
+#play {
+  display: inline-flex;
+  align-items: center;   
+  gap: 6px;              
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+#play svg {
+  width: 18px;
+  height: 18px;
+}
+
+#pause {
+  display: inline-flex;
+  align-items: center;   
+  gap: 6px;              
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+#pause svg {
+  width: 18px;
+  height: 18px;
+}
+
+#stop {
+  display: inline-flex;
+  align-items: center;   
+  gap: 6px;              
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+#stop svg {
+  width: 18px;
+  height: 18px;
+}
+
+#prev {
+  display: inline-flex;
+  align-items: center;   
+  gap: 6px;              
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+#prev svg {
+  width: 18px;
+  height: 18px;
+}
+
+#next {
+  display: inline-flex;
+  align-items: center;   
+  gap: 6px;              
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+#next svg {
+  width: 18px;
+  height: 18px;
+}

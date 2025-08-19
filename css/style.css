@@ -62,10 +62,10 @@ body, html{
   height:100%;
   object-fit:cover;
 }
-/* inclinaciÃ³n de cover en versiÃ³n mÃ³vil */
+/* inclinación de cover en versión móvil */
 @media(max-width:600px){
   .cover{
-    transform:rotate(-6deg); /* mantiene ligera inclinaciÃ³n */
+    transform:rotate(-6deg); /* mantiene ligera inclinación */
   }
 }
 
@@ -164,14 +164,14 @@ body, html{
   border:1px solid rgba(0,0,0,0.06);
   background:#fff;
   cursor:pointer;
-  transition: all 0.2s ease; /* animaciÃ³n suave */
+  transition: all 0.2s ease; /* animación suave */
 }
 
 /* Cambio de color y sombra al presionar */
 .controls button:active{
   background: var(--accent); /* color activo */
   color: #fff;
-  transform: scale(0.95); /* efecto de pulsaciÃ³n */
+  transform: scale(0.95); /* efecto de pulsación */
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
@@ -188,9 +188,9 @@ body, html{
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-/* NavegaciÃ³n */
+/* Navegación */
 .navigation {
-  margin-top: 20px; /* asegura separaciÃ³n */
+  margin-top: 20px; /* asegura separación */
   display: flex;
   gap: 10px;
   align-items: center;
@@ -211,7 +211,7 @@ body, html{
 .navigation button:active{
   background: var(--accent); /* color activo */
   color: #fff;
-  transform: scale(0.95); /* efecto de pulsaciÃ³n */
+  transform: scale(0.95); /* efecto de pulsación */
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
@@ -292,6 +292,9 @@ body, html{
   border-radius:6px;
 }
 
+
+
+
 /* Mobile */
 @media(max-width:600px){
   .canvas{
@@ -340,29 +343,7 @@ body, html{
 }
 
 
-/* Mensaje solo para mÃ³viles */
-.mobile-warning {
-  display: none; /* inicialmente oculto */
-  position: fixed;
-  top: 200px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #010101;
-  color: #fff;
-  padding: 12px 20px;
-  border-radius: 12px;
-  font-weight: 600;
-  z-index: 9999;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
 
-
-/* Oculto por defecto en escritorio */
-@media(min-width: 880px) {
-  .mobile-warning {
-    display: none;
-  }
-}
 
 
 /* Footer */
@@ -379,7 +360,6 @@ footer a {
   color: #ff4081; /* rosa vibrante */
   text-decoration: none;
 }
-
 
 
 
@@ -447,4 +427,8 @@ footer a {
   width: 18px;
   height: 18px;
 }
+
+
+
+
 

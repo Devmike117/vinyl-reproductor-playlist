@@ -62,10 +62,10 @@ body, html{
   height:100%;
   object-fit:cover;
 }
-/* inclinación de cover en versión móvil */
+/* inclinaciÃ³n de cover en versiÃ³n mÃ³vil */
 @media(max-width:600px){
   .cover{
-    transform:rotate(-6deg); /* mantiene ligera inclinación */
+    transform:rotate(-6deg); /* mantiene ligera inclinaciÃ³n */
   }
 }
 
@@ -164,14 +164,14 @@ body, html{
   border:1px solid rgba(0,0,0,0.06);
   background:#fff;
   cursor:pointer;
-  transition: all 0.2s ease; /* animación suave */
+  transition: all 0.2s ease; /* animaciÃ³n suave */
 }
 
 /* Cambio de color y sombra al presionar */
 .controls button:active{
   background: var(--accent); /* color activo */
   color: #fff;
-  transform: scale(0.95); /* efecto de pulsación */
+  transform: scale(0.95); /* efecto de pulsaciÃ³n */
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
@@ -188,9 +188,9 @@ body, html{
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-/* Navegación */
+/* NavegaciÃ³n */
 .navigation {
-  margin-top: 20px; /* asegura separación */
+  margin-top: 20px; /* asegura separaciÃ³n */
   display: flex;
   gap: 10px;
   align-items: center;
@@ -211,7 +211,7 @@ body, html{
 .navigation button:active{
   background: var(--accent); /* color activo */
   color: #fff;
-  transform: scale(0.95); /* efecto de pulsación */
+  transform: scale(0.95); /* efecto de pulsaciÃ³n */
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
@@ -227,6 +227,7 @@ body, html{
   transform: scale(0.95);
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
+
 
 /* Playlist */
 .playlist-container{
@@ -291,9 +292,6 @@ body, html{
   border-radius:6px;
 }
 
-
-
-
 /* Mobile */
 @media(max-width:600px){
   .canvas{
@@ -342,7 +340,7 @@ body, html{
 }
 
 
-/* Mensaje solo para móviles */
+/* Mensaje solo para mÃ³viles */
 .mobile-warning {
   display: none; /* inicialmente oculto */
   position: fixed;
@@ -381,6 +379,7 @@ footer a {
   color: #ff4081; /* rosa vibrante */
   text-decoration: none;
 }
+
 
 
 
@@ -448,3 +447,4 @@ footer a {
   width: 18px;
   height: 18px;
 }
+
